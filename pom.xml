@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>17</java.version>
 		<cloudevents.version>2.3.0</cloudevents.version>
-		<maven.sonar.version>3.9.1.2184</maven.sonar.version>
+<!--		<maven.sonar.version>3.9.1.2184</maven.sonar.version>-->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -83,47 +83,47 @@
 			</plugin>
 		</plugins>
 	</build>
-	<profiles>
-		<profile>
-			<id>sonar</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<!--	Sonar Config		-->
-				<sonar.organization>nashtech</sonar.organization>
-				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-				<sonarConfig>b47aeba29df2889126c736ee7012a5a490edc34a</sonarConfig> <!-- NOSONAR -->
-				<sonar.login>${sonarConfig}</sonar.login> <!-- NOSONAR -->
-				<sonar.jacoco.reportPath>target/coverage-reports/jacoco.exec</sonar.jacoco.reportPath>
-<!--				<sonar.coverage.exclusions>-->
-<!--					**/*config*/**,-->
-<!--					**/*exception*/**,-->
-<!--					**/*common*/**,-->
-<!--					**/*constant*/**,-->
-<!--					**/*model*/**,-->
-<!--					**/*Application.*-->
-<!--				</sonar.coverage.exclusions>-->
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.sonarsource.scanner.maven</groupId>
-						<artifactId>sonar-maven-plugin</artifactId>
-						<version>${maven.sonar.version}</version>
-						<executions>
-							<execution>
-								<phase>verify</phase>
-								<goals>
-									<goal>sonar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+<!--	<profiles>-->
+<!--		<profile>-->
+<!--			<id>sonar</id>-->
+<!--			<activation>-->
+<!--				<activeByDefault>false</activeByDefault>-->
+<!--			</activation>-->
+<!--			<properties>-->
+<!--				&lt;!&ndash;	Sonar Config		&ndash;&gt;-->
+<!--				<sonar.organization>nashtech</sonar.organization>-->
+<!--				<sonar.host.url>https://sonarcloud.io</sonar.host.url>-->
+<!--				<sonarConfig>b47aeba29df2889126c736ee7012a5a490edc34a</sonarConfig> &lt;!&ndash; NOSONAR &ndash;&gt;-->
+<!--				<sonar.login>${sonarConfig}</sonar.login> &lt;!&ndash; NOSONAR &ndash;&gt;-->
+<!--				<sonar.jacoco.reportPath>target/coverage-reports/jacoco.exec</sonar.jacoco.reportPath>-->
+<!--&lt;!&ndash;				<sonar.coverage.exclusions>&ndash;&gt;-->
+<!--&lt;!&ndash;					**/*config*/**,&ndash;&gt;-->
+<!--&lt;!&ndash;					**/*exception*/**,&ndash;&gt;-->
+<!--&lt;!&ndash;					**/*common*/**,&ndash;&gt;-->
+<!--&lt;!&ndash;					**/*constant*/**,&ndash;&gt;-->
+<!--&lt;!&ndash;					**/*model*/**,&ndash;&gt;-->
+<!--&lt;!&ndash;					**/*Application.*&ndash;&gt;-->
+<!--&lt;!&ndash;				</sonar.coverage.exclusions>&ndash;&gt;-->
+<!--			</properties>-->
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.sonarsource.scanner.maven</groupId>-->
+<!--						<artifactId>sonar-maven-plugin</artifactId>-->
+<!--						<version>${maven.sonar.version}</version>-->
+<!--						<executions>-->
+<!--							<execution>-->
+<!--								<phase>verify</phase>-->
+<!--								<goals>-->
+<!--									<goal>sonar</goal>-->
+<!--								</goals>-->
+<!--							</execution>-->
+<!--						</executions>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
+<!--		</profile>-->
+<!--	</profiles>-->
 	<repositories>
 		<repository>
 			<id>central</id>
