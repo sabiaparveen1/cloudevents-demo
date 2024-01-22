@@ -1,14 +1,26 @@
-name: "sonar_cloud_scan_github_actions"
+name: SonarCloud Scan
+
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  DemoSonarCloudSCan:
+  sonarcloud:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Run SonarQube analysis during build
-        run: mvn clean install sonar:sonar -Dsonar.organization=sabiaparveen1 -Dsonar.projectKey=cloudevents-demo -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'  # Set to your desired Java version
+
+      - name: Build with Maven and Run SonarQube analysis
+        run: |
+          mvn clean install sonar:sonar \
+            -Dsonar.organization=sabiaparveen1 \
+            -Dsonar.projectKey=cloudevents-demo \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
