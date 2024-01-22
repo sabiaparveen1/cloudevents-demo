@@ -18,4 +18,3 @@ jobs:
           args: >
             -Dsonar.organization=sabiaparveen1
             -Dsonar.projectKey=cloudevents-demo
-            -Dsonar.python.coverage.reportPaths=coverage.xml
